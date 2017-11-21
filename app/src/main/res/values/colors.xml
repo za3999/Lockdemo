@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="text_back">#000000</color>
+    <color name="text_while">#ffffff</color>
+    <color name="text_gray">#767676</color>
+    <color name="text_normal">#3c3c3c</color>
+
+    <color name="colorTextHint">#acaaa6</color>
+    <color name="colorTextNormal">#3c3c3c</color>
+    <color name="colorBg">#f5f5f5</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="color_mc1">#007ef7</color>
+    <color name="color_mc2">#ff6868</color>
+    <color name="color_mc3">#ffffff</color>
+    <color name="color_mc4_start">#13c5ff</color>
+    <color name="color_mc4_end">#007ef7</color>
+
+    <color name="color_ac1">#cccccc</color>
+    <color name="color_ac2">#e5e5e5</color>
+    <color name="color_ac3">#f5f5f5</color>
+    <color name="color_ac4">#c0c0c0</color>
+
+    <color name="color_tc1">#333333</color>
+    <color name="color_tc2">#666666</color>
+    <color name="color_tc3">#888888</color>
+    <color name="color_tc4">#999999</color>
+    <color name="color_transparency">#00000000</color>
+    <color name="color_half_transparency">#80000000</color>
+    <color name="color_4c4c4c">#4c4c4c</color>
+    <color name="color_dddddd">#dddddd</color>
+</resources>

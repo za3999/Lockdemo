@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <cn.marno.kkqrcode.KKScannerView
+        android:id="@+id/ut_scanner_view"
+        app:ut_animTime="2000"
+        app:ut_borderColor="@color/color_mc1"
+        app:ut_borderSize="1px"
+        app:ut_cornerColor="@color/color_mc1"
+        app:ut_cornerLength="@dimen/dm_30dp"
+        app:ut_cornerSize="@dimen/dm_4dp"
+        app:ut_customGridScanLineDrawable="@drawable/qr_icon_saomiaoxian"
+        app:ut_isOnlyDecodeScanBoxArea="true"
+        app:ut_isScanLineReverse="false"
+        app:ut_isShowDefaultGridScanLineDrawable="true"
+        app:ut_maskColor="#B3000000"
+        app:ut_rectWidth="@dimen/dm_290dp"
+        app:ut_scanLineMargin="-2dp"
+        app:ut_toolbarHeight="@dimen/dm_48dp"
+        app:ut_topOffset="@dimen/dm_100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

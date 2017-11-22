@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.format.DateUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -40,9 +39,7 @@ public class MainActivity extends BaseActivity {
     View vCycling;
 
     LockManager lockManager;
-
     Dialog loadingDialog;
-
     Timer timer;
     Long startTime;
     Animation inAnim, outAnim;
@@ -159,9 +156,6 @@ public class MainActivity extends BaseActivity {
         }, 0, 1000);
     }
 
-    /**
-     * 结束计费
-     */
     private void endCycling() {
         vScanBtn.setVisibility(View.VISIBLE);
         vCycling.setVisibility(View.GONE);

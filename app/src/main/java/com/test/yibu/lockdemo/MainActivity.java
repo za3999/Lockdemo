@@ -66,12 +66,22 @@ public class MainActivity extends BaseActivity implements AMapLocationListener {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initMap(savedInstanceState);
-        initLocationClient();
         inAnim = AnimationUtils.loadAnimation(this, R.anim.slide_bottom_in);
         outAnim = AnimationUtils.loadAnimation(this, R.anim.slide_bottom_out);
+        AndroidMPermissionHelper.checkPermission(this, new AndroidMPermissionHelper.PermissionCallBack() {
+            @Override
+            public void onGranted() {
+                initMap(savedInstanceState);
+                initLocationClient();
+            }
+
+            @Override
+            public void onDenied() {
+                Toast.makeText(MainActivity.this, "位置权限失败", Toast.LENGTH_LONG).show();
+            }
+        }, AndroidMPermissionHelper.PERMISSION_LOCATION);
     }
 
     @OnClick({R.id.scan_btn, R.id.stop_tv})

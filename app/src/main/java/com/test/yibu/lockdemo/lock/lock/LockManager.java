@@ -2,6 +2,8 @@ package com.test.yibu.lockdemo.lock.lock;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 
 import com.test.yibu.lockdemo.bean.LockMessage;
 import com.test.yibu.lockdemo.lock.bluetooth.BluetoothLeHelper;
@@ -20,6 +22,7 @@ public class LockManager {
     private ILock iLock;
     private Context context;
 
+
     private LockManager(Context context) {
         this.context = context;
     }
@@ -33,7 +36,7 @@ public class LockManager {
     }
 
     public void openLock(final LockMessage lockMessage, boolean needScan, final OpenLockListener listener, long
-            scanPeriod, long openPeriod) {
+            scanPeriod, final long openPeriod) {
         if (!BluetoothLeHelper.getInstance(context).isBluetoothLeSupport()) {
             listener.onOpenLock(false, LockConstant.LOCK_ERROR_TYPE_NOT_SUPPORT);
         } else if (!BluetoothLeHelper.getInstance(context).isBluetoothEnable()) {
@@ -52,12 +55,12 @@ public class LockManager {
                     public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
                         if (iLock.checkDevices(lockMessage, device, scanRecord)) {
                             BluetoothLeHelper.getInstance(context).stopLeScan(this);
-                            iLock.openLock(lockMessage, listener);
+                            iLock.openLock(lockMessage, listener, openPeriod);
                         }
                     }
                 }, scanPeriod);
             } else {
-                iLock.openLock(lockMessage, listener);
+                iLock.openLock(lockMessage, listener, openPeriod);
             }
         }
     }

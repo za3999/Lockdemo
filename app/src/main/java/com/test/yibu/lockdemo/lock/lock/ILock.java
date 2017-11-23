@@ -15,7 +15,7 @@ public interface ILock {
 
     boolean checkDevices(LockMessage message, BluetoothDevice device, byte[] scanRecord);
 
-    void openLock(LockMessage message, OpenLockListener openLockListener);
+    void openLock(LockMessage message, OpenLockListener openLockListener,long openPeriod);
 
     void monitoringLockClose(LockMessage message,LockCloseListener lockCloseListener);
 }

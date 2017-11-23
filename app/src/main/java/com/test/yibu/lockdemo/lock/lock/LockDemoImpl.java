@@ -4,6 +4,8 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import com.test.yibu.lockdemo.bean.LockMessage;
@@ -39,11 +41,18 @@ public class LockDemoImpl implements ILock {
     private OpenLockListener openLockListener;
     private LockCloseListener lockCloseListener;
 
-
     private LockMessage lockMessage;
     private byte[] currSendData;// 当前发送指令
     private byte[] token; //每个蓝牙设备只需获取一次
     private static int customOption = 0;
+    Handler handler;
+    Runnable timeOutRunnable = new Runnable() {
+        @Override
+        public void run() {
+            openLockResult(false, LockConstant.LOCK_ERROR_TYPE_TIME_OUT);
+        }
+    };
+
 
     public LockDemoImpl(Context context) {
         helper = BluetoothLeHelper.getInstance(context);
@@ -58,7 +67,7 @@ public class LockDemoImpl implements ILock {
     }
 
     @Override
-    public void openLock(LockMessage message, OpenLockListener openLockListener) {
+    public void openLock(LockMessage message, OpenLockListener openLockListener, long openPeriod) {
         this.lockMessage = message;
         this.openLockListener = openLockListener;
         BluetoothLeHelper.GattAdapter openLockAdapter = new BluetoothLeHelper.GattAdapter() {
@@ -115,6 +124,8 @@ public class LockDemoImpl implements ILock {
         if (helper.getConnectionState() != BluetoothConstant.STATE_CONNECTED) {
             helper.connect(message.getMac());
         }
+        handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(timeOutRunnable, openPeriod);
     }
 
     @Override
@@ -159,6 +170,9 @@ public class LockDemoImpl implements ILock {
                 openLockListener.onOpenLock(isOpen, message);
             }
             openLockListener = null;
+        }
+        if (handler != null) {
+            handler.removeCallbacks(timeOutRunnable);
         }
     }
 

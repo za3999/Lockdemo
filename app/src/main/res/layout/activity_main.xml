@@ -23,7 +23,9 @@
         android:gravity="center"
         android:paddingLeft="@dimen/dm_10dp"
         android:paddingRight="@dimen/dm_30dp"
-        android:text="@string/str_scan" />
+        android:text="@string/str_scan"
+        android:textColor="@color/color_mc3"
+        android:textSize="@dimen/dm_15dp" />
 
     <LinearLayout
         android:id="@+id/cycling_layout"

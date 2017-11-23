@@ -59,7 +59,6 @@ public class MainActivity extends BaseActivity implements AMapLocationListener {
     Animation inAnim, outAnim;
     AMap aMap;
     public AMapLocationClient mLocationClient;
-    public AMapLocationClientOption mLocationOption = null;
 
     @Override
     public int getLayoutRes() {
@@ -143,7 +142,7 @@ public class MainActivity extends BaseActivity implements AMapLocationListener {
     private void initLocationClient() {
         mLocationClient = new AMapLocationClient(this);
         mLocationClient.setLocationListener(this);
-        mLocationOption = new AMapLocationClientOption();
+        AMapLocationClientOption mLocationOption = new AMapLocationClientOption();
         mLocationOption.setLocationCacheEnable(true);
         //设置定位模式为Hight_Accuracy高精度模式，Battery_Saving为低功耗模式，Device_Sensors是仅设备模式
         mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);

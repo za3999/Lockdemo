@@ -70,10 +70,10 @@ public class MainActivity extends BaseActivity implements AMapLocationListener {
         super.onCreate(savedInstanceState);
         inAnim = AnimationUtils.loadAnimation(this, R.anim.slide_bottom_in);
         outAnim = AnimationUtils.loadAnimation(this, R.anim.slide_bottom_out);
+        initMap(savedInstanceState);
         AndroidMPermissionHelper.checkPermission(this, new AndroidMPermissionHelper.PermissionCallBack() {
             @Override
             public void onGranted() {
-                initMap(savedInstanceState);
                 initLocationClient();
             }
 

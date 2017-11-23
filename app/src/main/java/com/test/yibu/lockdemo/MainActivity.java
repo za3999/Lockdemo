@@ -71,10 +71,11 @@ public class MainActivity extends BaseActivity implements AMapLocationListener {
         inAnim = AnimationUtils.loadAnimation(this, R.anim.slide_bottom_in);
         outAnim = AnimationUtils.loadAnimation(this, R.anim.slide_bottom_out);
         initMap(savedInstanceState);
+        initLocationClient();
         AndroidMPermissionHelper.checkPermission(this, new AndroidMPermissionHelper.PermissionCallBack() {
             @Override
             public void onGranted() {
-                initLocationClient();
+                mLocationClient.startLocation();
             }
 
             @Override
@@ -160,7 +161,6 @@ public class MainActivity extends BaseActivity implements AMapLocationListener {
         mLocationOption.setNeedAddress(true);
         mLocationOption.setGpsFirst(true);
         mLocationClient.setLocationOption(mLocationOption);
-        mLocationClient.startLocation();
     }
 
     private void checkScanPermission() {

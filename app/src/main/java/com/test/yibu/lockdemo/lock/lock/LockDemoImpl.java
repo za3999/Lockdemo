@@ -92,7 +92,7 @@ public class LockDemoImpl implements ILock {
                         token = getToken(characteristic);
                         sendCheckStatusData();
                     } else {
-//                        sendGetTokenData();
+                        sendGetTokenData();
                     }
                 } else {
                     byte[] mingWen = getMingWen(characteristic);

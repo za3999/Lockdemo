@@ -1,31 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.test.yibu.lockdemo.MainActivity">
 
-    <TextView
-        android:id="@+id/hint_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/dm_40dp" />
+    <com.amap.api.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <Button
         android:id="@+id/scan_btn"
-        android:layout_width="@dimen/dm_200dp"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/dm_50dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/dm_20dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="@dimen/dm_20dp"
+        android:background="@drawable/scan_bg"
+        android:drawableLeft="@drawable/break_icon_qr"
+        android:drawablePadding="@dimen/dm_10dp"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dm_10dp"
+        android:paddingRight="@dimen/dm_30dp"
         android:text="@string/str_scan" />
 
-    <Button
-        android:id="@+id/cancel_btn"
-        android:layout_width="@dimen/dm_200dp"
-        android:layout_height="@dimen/dm_50dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/dm_20dp"
-        android:text="@string/str_cancel" />
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/cycling_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm_30dp"
+            android:text="@string/str_is_cycling"
+            android:textColor="@color/color_mc1"
+            android:textSize="@dimen/dm_30dp" />
+
+        <TextView
+            android:id="@+id/tv_cycling_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dm_10dp"
+            android:text="00:35:17"
+            android:textColor="@color/color_mc1"
+            android:textSize="@dimen/dm_48dp" />
+
+        <TextView
+            android:id="@+id/stop_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dm_10dp"
+            android:layout_marginTop="@dimen/dm_10dp"
+            android:background="@drawable/stop_bg"
+            android:paddingBottom="@dimen/dm_10dp"
+            android:paddingLeft="@dimen/dm_40dp"
+            android:paddingRight="@dimen/dm_40dp"
+            android:paddingTop="@dimen/dm_5dp"
+            android:text="@string/str_stop_cycling"
+            android:textColor="@color/color_mc3"
+            android:textSize="@dimen/dm_20dp" />
+    </LinearLayout>
+</FrameLayout>

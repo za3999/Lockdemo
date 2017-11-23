@@ -96,15 +96,15 @@ public class LockDemoImpl implements ILock {
             public void onCharacteristicChanged(BluetoothGattCharacteristic characteristic) {
                 super.onCharacteristicChanged(characteristic);
                 Log.w(TAG, "！！！onCharacteristicChanged！！！currOption:" + customOption + ", characteristic.getValue:::" + getStr4Byte(characteristic.getValue()));
+                byte[] mingWen = getMingWen(characteristic);
                 if (token == null) {
-                    if (isSendDataSuccess(characteristic)) {
-                        token = getToken(characteristic);
+                    if (isTokenCmdResult(mingWen)) {
+                        token = getToken(mingWen);
                         sendCheckStatusData();
                     } else {
                         sendGetTokenData();
                     }
                 } else {
-                    byte[] mingWen = getMingWen(characteristic);
                     if (isGetStatusCmdResult(mingWen)) {
                         if (isLockStatusOpen(mingWen)) {
                             openLockResult(false, LockConstant.LOCK_TYPE_ALREADY_OPEN);
@@ -200,23 +200,30 @@ public class LockDemoImpl implements ILock {
     }
 
     /**
-     * 获取令牌指令
+     * 是否是获取锁状态的返回指令
      *
-     * @param characteristic
+     * @param mingWen
      * @return
      */
-    private byte[] getToken(BluetoothGattCharacteristic characteristic) {
+    private boolean isTokenCmdResult(byte[] mingWen) {
+        LogHelper.w(TAG, "methord isTokenCmdResult");
+        return mingWen[0] == 0x06 && mingWen[1] == 0x02;
+    }
+
+
+    /**
+     * 获取令牌指令
+     *
+     * @param mingWen
+     * @return
+     */
+    private byte[] getToken(byte[] mingWen) {
         LogHelper.w(TAG, "methord getToken");
-        byte[] mingWen = getMingWen(characteristic);
-        if (mingWen != null && mingWen.length == 16) {
-            if (mingWen[0] == 0x06 && mingWen[1] == 0x02) {
-                token = new byte[4];
-                token[0] = mingWen[3];
-                token[1] = mingWen[4];
-                token[2] = mingWen[5];
-                token[3] = mingWen[6];
-            }
-        }
+        token = new byte[4];
+        token[0] = mingWen[3];
+        token[1] = mingWen[4];
+        token[2] = mingWen[5];
+        token[3] = mingWen[6];
         return token;
     }
 

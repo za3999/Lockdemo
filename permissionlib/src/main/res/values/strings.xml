@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">PermissionManager</string>
     <string name="action_settings">Settings</string>
     <string name="str_no_permission">权限被禁止，无法完成操作。</string>
     <string name="str_get_permission_success">获取权限成功</string>

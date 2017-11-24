@@ -18,6 +18,7 @@
         android:layout_gravity="center_horizontal|bottom"
         android:layout_marginBottom="@dimen/dm_20dp"
         android:background="@drawable/scan_bg"
+        android:textAllCaps="false"
         android:drawableLeft="@drawable/break_icon_qr"
         android:drawablePadding="@dimen/dm_10dp"
         android:gravity="center"

@@ -141,6 +141,7 @@ public class MainActivity extends BaseActivity implements AMapLocationListener {
         aMap.setMapType(AMap.MAP_TYPE_NORMAL);
         UiSettings settings = aMap.getUiSettings();
         settings.setMyLocationButtonEnabled(true); // 是否显示定位按钮
+        settings.setLogoBottomMargin(-50);//隐藏logo
         MyLocationStyle locationStyle = new MyLocationStyle();
         locationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE_NO_CENTER);
         locationStyle.radiusFillColor(Color.parseColor("#1A007ef7"));

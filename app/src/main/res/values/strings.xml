@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">NewYorkBike</string>
-    <string name="action_settings">Settings</string>
     <string name="str_scan">Scan</string>
     <string name="str_opening">Unlocking,Please wait...</string>
     <string name="str_open_lock_success">Unlock success</string>

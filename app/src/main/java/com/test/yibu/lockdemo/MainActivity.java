@@ -180,7 +180,10 @@ public class MainActivity extends BaseActivity implements AMapLocationListener {
 
     private void openLock() {
         loadingDialog = ProgressDialog.show(this, "", getString(R.string.str_opening), true, false);
-        final LockMessage lockMessage = new LockMessage("3C:A3:08:08:C5:E7", LockConstant.INIT_PWD, LockConstant.INIT_KEY);
+//        final LockMessage lockMessage = new LockMessage("3C:A3:08:08:C5:E7", LockConstant.INIT_PWD, LockConstant.INIT_KEY);
+        final LockMessage lockMessage = new LockMessage("50:33:8B:F3:E6:0A", LockConstant.INIT_PWD, LockConstant.INIT_KEY);
+//        final LockMessage lockMessage = new LockMessage("50:33:8B:F2:1C:F8", LockConstant.INIT_PWD, LockConstant.INIT_KEY);
+//        final LockMessage lockMessage = new LockMessage("50:33:8B:F3:1F:F5", LockConstant.INIT_PWD, LockConstant.INIT_KEY);
         loadingDialog.show();
         lockManager = LockManager.getInstance(this);
         lockManager.openLock(lockMessage, new OpenLockListener() {
@@ -208,6 +211,7 @@ public class MainActivity extends BaseActivity implements AMapLocationListener {
             public void onLockClose(boolean state) {
                 Toast.makeText(MainActivity.this, getString(R.string.str_close_lock_success), Toast.LENGTH_LONG).show();
                 endCycling();
+                lockManager.cancelOption();
             }
         });
     }

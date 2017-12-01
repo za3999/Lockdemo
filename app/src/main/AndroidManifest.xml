@@ -31,6 +31,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="channel"
+            android:value="${CHANNEL_VALUE}" />
+
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="1920e35e3407c68d7dcdd8ed01ff3e31"/>

@@ -20,6 +20,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        flavorDimensions "versionCode"
     }
 
     lintOptions {//设置编译的lint开关，程序在buid的时候，会执行lint检查，有任何的错误或者警告提示，都会终止构建
@@ -41,6 +42,24 @@ android {
         main {
             // 设置so 文件在libs目录下
             jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    productFlavors {
+        kuan {
+            manifestPlaceholders = [CHANNEL_VALUE: "kuan"]
+        }
+        xiaomi {
+            manifestPlaceholders = [CHANNEL_VALUE: "xiaomi"]
+        }
+        qh360 {
+            manifestPlaceholders = [CHANNEL_VALUE: "qh360"]
+        }
+        baidu {
+            manifestPlaceholders = [CHANNEL_VALUE: "baidu"]
+        }
+        wandoujia {
+            manifestPlaceholders = [CHANNEL_VALUE: "wandoujia"]
         }
     }
 

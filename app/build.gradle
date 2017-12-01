@@ -28,7 +28,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
-        debug{
+        debug {
 
         }
     }
@@ -41,7 +41,8 @@ android {
 
     applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "v_${variant.name}-${variant.versionName}.apk"
+            Date date = new Date()
+            outputFileName = "v_${variant.name}_${date.time}_${variant.versionName}.apk"
         }
     }
 }

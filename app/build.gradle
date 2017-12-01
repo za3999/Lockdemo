@@ -23,6 +23,12 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "v_${variant.name}-${variant.versionName}.apk"
+        }
+    }
 }
 
 dependencies {

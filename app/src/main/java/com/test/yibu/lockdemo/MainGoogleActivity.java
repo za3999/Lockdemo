@@ -210,7 +210,6 @@ public class MainGoogleActivity extends BaseActivity implements
         mMapView.onDestroy();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void initMap(@Nullable Bundle savedInstanceState) {
         Bundle mapViewBundle = null;
         if (savedInstanceState != null) {

@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 apply plugin: 'com.android.application'
 
 android {
@@ -21,6 +23,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions "versionCode"
+        multiDexEnabled true
     }
 
     lintOptions {//设置编译的lint开关，程序在buid的时候，会执行lint检查，有任何的错误或者警告提示，都会终止构建
@@ -38,6 +41,13 @@ android {
 
         }
     }
+
+    // 添加之
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+    }
+
     sourceSets {
         main {
             // 设置so 文件在libs目录下
@@ -46,8 +56,8 @@ android {
     }
 
     productFlavors {
-        kuan {
-            manifestPlaceholders = [CHANNEL_VALUE: "kuan"]
+        yibu {
+            manifestPlaceholders = [CHANNEL_VALUE: "yibu"]
         }
         xiaomi {
             manifestPlaceholders = [CHANNEL_VALUE: "xiaomi"]
@@ -65,8 +75,8 @@ android {
 
     applicationVariants.all { variant ->
         variant.outputs.all {
-            Date date = new Date()
-            outputFileName = "v_${variant.name}_${date.time}_${variant.versionName}.apk"
+            SimpleDateFormat format = new SimpleDateFormat("yyyy_MM_dd hh_mm_ss")
+            outputFileName = "v_${variant.name}_${format.format(new Date())}_${variant.versionName}.apk"
         }
     }
 }
@@ -89,4 +99,6 @@ dependencies {
     compile 'com.amap.api:location:latest.integration'
     //搜索功能
     compile 'com.amap.api:search:latest.integration'
+    implementation 'com.google.android.gms:play-services-maps:11.6.2'
+    compile 'com.google.android.gms:play-services:11.6.2'
 }

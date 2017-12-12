@@ -37,13 +37,28 @@
             android:value="${CHANNEL_VALUE}" />
 
         <meta-data
-            android:name="com.amap.api.v2.apikey"
-            android:value="1920e35e3407c68d7dcdd8ed01ff3e31"/>
-        <service android:name="com.amap.api.location.APSService"/>
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDWvP6qT_zYeZG6FxvJljHHq_p9xI7dDIo"/>
 
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="1920e35e3407c68d7dcdd8ed01ff3e31" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+        <!--<activity-->
+            <!--android:name=".MainActivity"-->
+            <!--android:label="@string/app_name">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:name=".MainGoogleActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

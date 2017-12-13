@@ -42,12 +42,6 @@ android {
         }
     }
 
-    // 添加之
-    dexOptions {
-        incremental true
-        javaMaxHeapSize "4g"
-    }
-
     sourceSets {
         main {
             // 设置so 文件在libs目录下
@@ -101,4 +95,5 @@ dependencies {
     compile 'com.amap.api:search:latest.integration'
     implementation 'com.google.android.gms:play-services-maps:11.6.2'
     compile 'com.google.android.gms:play-services:11.6.2'
+    compile 'com.github.lygttpod:SuperTextView:2.1.5'
 }

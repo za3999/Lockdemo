@@ -1,75 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.test.yibu.lockdemo.MainActivity">
-
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/map_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:background="#66ff0000" />
-
-    <Button
-        android:id="@+id/scan_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dm_50dp"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="@dimen/dm_20dp"
-        android:background="@drawable/scan_bg"
-        android:drawableLeft="@drawable/break_icon_qr"
-        android:drawablePadding="@dimen/dm_10dp"
-        android:gravity="center"
-        android:paddingLeft="@dimen/dm_10dp"
-        android:paddingRight="@dimen/dm_30dp"
-        android:text="@string/str_scan"
-        android:textAllCaps="false"
-        android:textColor="@color/color_mc3"
-        android:textSize="@dimen/dm_15dp" />
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/cycling_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@color/white"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:visibility="gone">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dm_30dp"
-            android:text="@string/str_is_cycling"
-            android:textColor="@color/color_mc1"
-            android:textSize="@dimen/dm_30dp" />
+        <com.test.yibu.lockdemo.view.TitleView
+            android:id="@+id/title_view"
+            style="@style/TitleBar"
+            app:titleText="@string/app_name" />
 
-        <TextView
-            android:id="@+id/tv_cycling_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dm_10dp"
-            android:text="00:35:17"
-            android:textColor="@color/color_mc1"
-            android:textSize="@dimen/dm_48dp" />
+        <FrameLayout xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="com.test.yibu.lockdemo.MainActivity">
 
-        <TextView
-            android:id="@+id/stop_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dm_10dp"
-            android:layout_marginTop="@dimen/dm_10dp"
-            android:background="@drawable/stop_bg"
-            android:paddingBottom="@dimen/dm_10dp"
-            android:paddingLeft="@dimen/dm_40dp"
-            android:paddingRight="@dimen/dm_40dp"
-            android:paddingTop="@dimen/dm_5dp"
-            android:text="@string/str_stop_cycling"
-            android:textColor="@color/color_mc3"
-            android:textSize="@dimen/dm_20dp" />
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/map_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="#66ff0000" />
+
+            <Button
+                android:id="@+id/scan_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dm_50dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="@dimen/dm_20dp"
+                android:background="@drawable/scan_bg"
+                android:drawableLeft="@drawable/break_icon_qr"
+                android:drawablePadding="@dimen/dm_10dp"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dm_10dp"
+                android:paddingRight="@dimen/dm_30dp"
+                android:text="@string/str_scan"
+                android:textAllCaps="false"
+                android:textColor="@color/color_mc3"
+                android:textSize="@dimen/dm_15dp" />
+
+            <LinearLayout
+                android:id="@+id/cycling_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dm_30dp"
+                    android:text="@string/str_is_cycling"
+                    android:textColor="@color/color_mc1"
+                    android:textSize="@dimen/dm_30dp" />
+
+                <TextView
+                    android:id="@+id/tv_cycling_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dm_10dp"
+                    android:text="00:35:17"
+                    android:textColor="@color/color_mc1"
+                    android:textSize="@dimen/dm_48dp" />
+
+                <TextView
+                    android:id="@+id/stop_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dm_10dp"
+                    android:layout_marginTop="@dimen/dm_10dp"
+                    android:background="@drawable/stop_bg"
+                    android:paddingBottom="@dimen/dm_10dp"
+                    android:paddingLeft="@dimen/dm_40dp"
+                    android:paddingRight="@dimen/dm_40dp"
+                    android:paddingTop="@dimen/dm_5dp"
+                    android:text="@string/str_stop_cycling"
+                    android:textColor="@color/color_mc3"
+                    android:textSize="@dimen/dm_20dp" />
+            </LinearLayout>
+        </FrameLayout>
     </LinearLayout>
-</FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/person_center_layout"
+        android:layout_width="@dimen/dm_260dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dm_220dp"
+            android:background="@drawable/ucenter_pic_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.test.yibu.lockdemo.view.ShadowRoundImageView
+                android:layout_width="@dimen/dm_75dp"
+                android:layout_height="@dimen/dm_50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dm_61dp"
+                android:src="@drawable/ucenter_pic_head"
+                app:firstShadowColor="@color/color_mc3"
+                app:firstShadowWidth="@dimen/dm_1dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dm_45dp">
+
+                <TextView
+                    android:id="@+id/tv_phone_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Jackson"
+                    android:textColor="@color/color_mc3"
+                    android:textSize="@dimen/nt4_text_size" />
+
+                <ImageView
+                    android:id="@+id/iv_identify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dm_6dp"
+                    android:layout_toRightOf="@id/tv_phone_number"
+                    android:paddingBottom="@dimen/dm_4dp"
+                    android:src="@drawable/ucenter_icon_iccard_y" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_credit_point"
+                android:layout_width="@dimen/dm_120dp"
+                android:layout_height="@dimen/dm_24dp"
+                android:background="@drawable/bg_radius_80_143657"
+                android:drawableRight="@drawable/ucenter_icon_arrow_w"
+                android:gravity="center"
+                android:paddingRight="@dimen/dm_8dp"
+                android:text="@string/str_credit_grade"
+                android:textColor="@color/color_mc3"
+                android:textSize="@dimen/t4_text_size" />
+        </LinearLayout>
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/stv_item_wallet"
+            style="@style/PersonCenterItem"
+            app:sLeftIconRes="@drawable/mine_icon_wallet"
+            app:sLeftTextString="@string/title_my_wallet" />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/stv_item_trip"
+            style="@style/PersonCenterItem"
+            app:sLeftIconRes="@drawable/mine_icon_trip"
+            app:sLeftTextString="@string/str_journey_record" />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/stv_item_help"
+            style="@style/PersonCenterItem"
+            app:sLeftIconRes="@drawable/ucenter_icon_help"
+            app:sLeftTextString="@string/str_help" />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/stv_item_setting"
+            style="@style/PersonCenterItem"
+            android:layout_width="wrap_content"
+            app:sBottomDividerLineMarginLeft="0dp"
+            app:sLeftIconRes="@drawable/ucenter_icon_set"
+            app:sLeftTextString="@string/str_item_setting" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

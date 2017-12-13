@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -36,6 +38,7 @@ import com.test.yibu.lockdemo.lock.lock.linister.LockCloseListener;
 import com.test.yibu.lockdemo.lock.lock.linister.OpenLockListener;
 import com.test.yibu.lockdemo.util.DateTimeUtil;
 import com.test.yibu.lockdemo.util.LogHelper;
+import com.test.yibu.lockdemo.view.TitleView;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -50,6 +53,10 @@ public class MainGoogleActivity extends BaseActivity implements
 
     private static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
 
+    @BindView(R.id.title_view)
+    TitleView titleView;//标题栏
+    @BindView(R.id.drawer_layout)
+    DrawerLayout mDrawerLayout;//侧滑drawerlayout
     @BindView(R.id.map_view)
     MapView mMapView;
     @BindView(R.id.tv_cycling_time)
@@ -77,6 +84,14 @@ public class MainGoogleActivity extends BaseActivity implements
     public void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initMap(savedInstanceState);
+        initTitleBar(titleView);
+        titleView.setOnLeftTextClickListener(new View.OnClickListener() {
+                                                 @Override
+                                                 public void onClick(View view) {
+                                                     mDrawerLayout.openDrawer(GravityCompat.START);
+                                                 }
+                                             }
+        );
         inAnim = AnimationUtils.loadAnimation(this, R.anim.slide_bottom_in);
         outAnim = AnimationUtils.loadAnimation(this, R.anim.slide_bottom_out);
         AndroidMPermissionHelper.checkPermission(this, new AndroidMPermissionHelper.PermissionCallBack() {
@@ -125,7 +140,7 @@ public class MainGoogleActivity extends BaseActivity implements
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        LogHelper.d(TAG,"onMapReady");
+        LogHelper.d(TAG, "onMapReady");
         this.mGoogleMap = googleMap;
         try {
             mGoogleMap.setMyLocationEnabled(true);
@@ -137,7 +152,7 @@ public class MainGoogleActivity extends BaseActivity implements
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        LogHelper.d(TAG,"onConnected");
+        LogHelper.d(TAG, "onConnected");
         Location mLastLocation = null;
         try {
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
@@ -171,12 +186,12 @@ public class MainGoogleActivity extends BaseActivity implements
 
     @Override
     public void onConnectionSuspended(int i) {
-        LogHelper.d(TAG,"onConnectionSuspended");
+        LogHelper.d(TAG, "onConnectionSuspended");
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        LogHelper.d(TAG,"onConnectionFailed");
+        LogHelper.d(TAG, "onConnectionFailed");
     }
 
 

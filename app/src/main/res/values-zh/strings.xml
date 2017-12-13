@@ -9,4 +9,10 @@
     <string name="str_scan_hint">将取景框对准二维码</string>
     <string name="str_is_cycling">骑行中...</string>
     <string name="str_stop_cycling">停车</string>
+    <string name="title_my_wallet">我的钱包</string>
+    <string name="str_journey_record">行程记录</string>
+    <string name="str_help">帮助中心</string>
+    <string name="str_item_setting">设置</string>
+    <string name="str_credit_grade">信用分：200</string>
+
 </resources>

@@ -17,4 +17,30 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="TitleBar">
+        <item name="android:id">@id/title_view</item>
+        <item name="android:layout_height">@dimen/dm_48dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/color_mc1</item>
+        <item name="titleLeftIco">@drawable/home_icon_ic</item>
+        <item name="kk_mainTextColor">@color/color_tc1</item>
+        <item name="kk_mainTextSize">@dimen/t1_text_size</item>
+        <item name="kk_horizontalPadding">@dimen/dm_18dp</item>
+    </style>
+
+    <style name="PersonCenterItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dm_50dp</item>
+        <item name="sLeftIconMarginLeft">@dimen/dm_18dp</item>
+        <item name="sLeftViewGravity">left_center</item>
+        <item name="sLeftViewWidth">@dimen/dm_76dp</item>
+        <item name="sRightTextColor">@color/color_tc4</item>
+        <item name="sRightTextSize">@dimen/t4_text_size</item>
+        <item name="sRightViewMarginRight">@dimen/dm_18dp</item>
+        <item name="sDividerLineType">bottom</item>
+        <item name="sDividerLineHeight">@dimen/dm_0.5dp</item>
+        <item name="sDividerLineColor">#1a051016</item>
+        <item name="sRightTvDrawableRight">@drawable/ucenter_icon_arrow_b</item>
+
+    </style>
 </resources>

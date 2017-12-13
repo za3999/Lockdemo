@@ -9,4 +9,9 @@
     <string name="str_scan_hint">Align the frame to the qr code</string>
     <string name="str_is_cycling">Bicycle riding...</string>
     <string name="str_stop_cycling">Stop riding</string>
+    <string name="title_my_wallet">Wallet</string>
+    <string name="str_journey_record">Record</string>
+    <string name="str_help">Help</string>
+    <string name="str_item_setting">Setting</string>
+    <string name="str_credit_grade">Credit：200</string>
 </resources>

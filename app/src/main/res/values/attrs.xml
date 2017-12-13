@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleView">
+        <attr name="titleLeftText" format="reference|string" />
+        <attr name="kk_leftTextSize" format="dimension" />
+        <attr name="kk_leftTextColor" format="color" />
+        <attr name="kk_leftTextBackgroundColor" format="color" />
+        <attr name="kk_leftTextBackgroundResource" format="reference" />
+        <attr name="titleLeftIco" format="reference" />
+        <attr name="titleLeftIcoWith" format="reference" />
+        <attr name="titleLeftIcoHeight" format="reference" />
+        <attr name="kk_leftTextDrawablePadding" format="dimension" />
+        <attr name="titleText" format="string|reference" />
+        <attr name="kk_mainTextSize" format="dimension" />
+        <attr name="kk_mainTextColor" format="color" />
+        <attr name="kk_mainTextBackgroundColor" format="color" />
+        <attr name="kk_mainTextBackgroundResource" format="reference" />
+        <attr name="kk_mainTextFakeBold" format="boolean" />
+        <attr name="titleRightText" format="reference|string" />
+        <attr name="kk_rightTextSize" format="dimension" />
+        <attr name="kk_rightTextColor" format="color" />
+        <attr name="kk_rightTextBackgroundColor" format="color" />
+        <attr name="kk_rightTextBackgroundResource" format="reference" />
+        <attr name="titleRightIco" format="reference" />
+        <attr name="titleRightIcoWith" format="reference" />
+        <attr name="titleRightIcoHeight" format="reference" />
+        <attr name="kk_rightTextDrawablePadding" format="dimension" />
+        <attr name="kk_horizontalPadding" format="dimension" />
+        <attr name="kk_dividerHeight" format="dimension" />
+        <attr name="kk_dividerResource" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ShadowRoundImageView">
+        <attr name="firstShadowWidth" format="dimension" />
+        <attr name="secondShadowWidth" format="dimension" />
+        <attr name="firstShadowColor" format="color" />
+        <attr name="secondShadowColor" format="color" />
+    </declare-styleable>
+</resources>

@@ -14,4 +14,6 @@
     <string name="str_help">Help</string>
     <string name="str_item_setting">Setting</string>
     <string name="str_credit_grade">Credit：200</string>
+    <string name="str_location_fail">Location permission denied</string>
+    <string name="str_camera_fail">Camera permission denied</string>
 </resources>

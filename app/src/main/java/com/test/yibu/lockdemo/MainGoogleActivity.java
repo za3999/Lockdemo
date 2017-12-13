@@ -102,7 +102,7 @@ public class MainGoogleActivity extends BaseActivity implements
 
             @Override
             public void onDenied() {
-                Toast.makeText(MainGoogleActivity.this, "位置权限失败", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainGoogleActivity.this, getString(R.string.str_location_fail), Toast.LENGTH_LONG).show();
             }
         }, AndroidMPermissionHelper.PERMISSION_LOCATION);
     }
@@ -243,7 +243,7 @@ public class MainGoogleActivity extends BaseActivity implements
 
             @Override
             public void onDenied() {
-                Toast.makeText(MainGoogleActivity.this, "获取相机权限失败", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainGoogleActivity.this, getString(R.string.str_camera_fail), Toast.LENGTH_LONG).show();
             }
         }, AndroidMPermissionHelper.PERMISSION_CAMERA);
     }

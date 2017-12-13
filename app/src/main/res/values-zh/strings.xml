@@ -14,5 +14,6 @@
     <string name="str_help">帮助中心</string>
     <string name="str_item_setting">设置</string>
     <string name="str_credit_grade">信用分：200</string>
-
+    <string name="str_location_fail">位置权限失败</string>
+    <string name="str_camera_fail">获取相机权限失败</string>
 </resources>
